@@ -114,10 +114,10 @@ class VadHandlerNonWeb implements VadHandlerBase {
 
     // Start recording with a stream
     final stream = await _audioRecorder.startStream(const RecordConfig(
+        iosConfig: IosRecordConfig(manageAudioSession: false),
         encoder: AudioEncoder.pcm16bits,
         sampleRate: sampleRate,
         bitRate: 16,
-        numChannels: 1,
         echoCancel: true,
         autoGain: true,
         noiseSuppress: true));
